@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Write or Die">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#f5f2ed" id="meta-theme">
+<meta name="theme-color" content="#f6f1e7" id="meta-theme">
 <meta name="description" content="Stop typing and lose everything. A writing app with consequences.">
 <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIldyaXRlIG9yIERpZSIsCiAgInNob3J0X25hbWUiOiAiV3JpdGVPckRpZSIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZjVmMmVkIiwKICAidGhlbWVfY29sb3IiOiAiI2Y1ZjJlZCIsCiAgImljb25zIjogW10KfQ==">
 <title>Write or Die</title>
@@ -17,19 +17,19 @@
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 
 :root {
-  --bg:#f5f2ed; --text:#28221e; --muted:#9e9790;
+  --bg:#f6f1e7; --text:#2a2318; --muted:#9a8e7e;
   --danger-low:#d4a842; --danger-mid:#c96a28; --danger-high:#b83030;
-  --flow:#3d6b5e; --flow-bg:#eff4f2; --idea-bg:#2c3e6b; --transition:0.6s ease;
-  --peace-bg:#eef1f7; --peace-text:#22283a; --peace-muted:#8a93a8; --peace-accent:#4a6fa5;
-  --border-subtle:rgba(0,0,0,.12); --border-med:rgba(0,0,0,.15);
+  --flow:#3d6b5e; --flow-bg:#f0f2ea; --idea-bg:#2c3e6b; --transition:0.6s ease;
+  --peace-bg:#f0ede5; --peace-text:#22283a; --peace-muted:#8a93a8; --peace-accent:#6a92b8;
+  --border-subtle:rgba(0,0,0,.10); --border-med:rgba(0,0,0,.14);
   --surface-hover:rgba(0,0,0,.04); --surface-active:rgba(0,0,0,.03);
   --toggle-track:rgba(0,0,0,.12); --toggle-thumb:#fff;
-  --warn-low-bg:#f3ede0; --warn-mid-bg:#f2e4d4; --warn-high-bg:#f0d8d0;
-  --pulse-a:#f0d8d0; --pulse-b:#edc8c0;
+  --warn-low-bg:#f2ead8; --warn-mid-bg:#f0e0cc; --warn-high-bg:#ecd4c4;
+  --pulse-a:#ecd4c4; --pulse-b:#e8cabb;
   --dead-bg:#180a08; --dead-text:#3a1a15;
   --end-bg:#1a0a08; --end-h:#8a4a40; --end-sub:#5a2a25;
   --streak-hot:#b85218; --chaos-c:#8a5e2a; --warmup-c:#4a7a6a; --bd-dot:#6a8a7a;
-  --swatch:linear-gradient(135deg,#f5f2ed 50%,#28221e 50%);
+  --swatch:linear-gradient(135deg,#f6f1e7 50%,#2a2318 50%);
 }
 
 /* ── PARCHMENT (default, no extra class needed) ── */
@@ -172,7 +172,7 @@ body.dark {
   --dead-bg:#060810; --dead-text:#2a2040;
   --end-bg:#06080e; --end-h:#6a5080; --end-sub:#4a3868;
   --streak-hot:#d08838; --chaos-c:#6a8ac0; --warmup-c:#4a9a8a; --bd-dot:#4a9a8a;
-  --swatch:linear-gradient(135deg,#f5f2ed 50%,#0a0e1a 50%);
+  --swatch:linear-gradient(135deg,#f6f1e7 50%,#0a0e1a 50%);
 }
 body.dark { background:var(--bg); color:var(--text); }
 body.dark.peace     { background:var(--peace-bg); color:var(--peace-text); }
@@ -659,6 +659,10 @@ body.dark #death-confirm { background:rgba(6,8,16,.95); }
   font-family:'EB Garamond',serif; font-size:10px; letter-spacing:.06em;
   color:var(--muted); margin-top:4px; opacity:.6;
 }
+#stat-pace {
+  font-family:'Lora',serif; font-size:12px; font-style:italic;
+  color:var(--muted); opacity:.5; margin-top:14px;
+}
 
 /* Setup stats button */
 #setup-stats-btn {
@@ -1011,7 +1015,7 @@ body.keyboard-open #danger-bar-wrap { padding-top:6px; }
       <div class="font-group">
         <span class="choice-label">Color scheme</span>
         <div id="scheme-opts">
-          <button class="scheme-btn selected" data-scheme="" title="Parchment"><span class="scheme-swatch" style="background:linear-gradient(135deg,#f5f2ed 50%,#28221e 50%)"></span></button>
+          <button class="scheme-btn selected" data-scheme="" title="Parchment"><span class="scheme-swatch" style="background:linear-gradient(135deg,#f6f1e7 50%,#2a2318 50%)"></span></button>
           <button class="scheme-btn" data-scheme="scheme-ocean" title="Ocean"><span class="scheme-swatch" style="background:linear-gradient(135deg,#e8eef6 50%,#1a2840 50%)"></span></button>
           <button class="scheme-btn" data-scheme="scheme-flora" title="Flora"><span class="scheme-swatch" style="background:linear-gradient(135deg,#edf2ea 50%,#1e2a1a 50%)"></span></button>
           <button class="scheme-btn" data-scheme="scheme-ember" title="Ember"><span class="scheme-swatch" style="background:linear-gradient(135deg,#f4ede4 50%,#2e1e14 50%)"></span></button>
@@ -1177,6 +1181,7 @@ body.keyboard-open #danger-bar-wrap { padding-top:6px; }
           <span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>11p</span>
         </div>
       </div>
+      <p id="stat-pace"></p>
       <div id="device-section">
         <span class="stat-section-label">Sync across devices</span>
         <div id="device-id-row">
@@ -2118,6 +2123,17 @@ function renderStats(){
     if(pct>0.1) bar.classList.add('active');
     if(hourCounts[h]===maxHour && maxHour>0) bar.classList.add('peak');
     hourMap.appendChild(bar);
+  }
+
+  // Pace — quiet footnote
+  const paceEl=document.getElementById('stat-pace');
+  const withWpm=sessions.filter(s=>s.avgWpm && s.avgWpm>0);
+  if(withWpm.length>=2){
+    const avg=Math.round(withWpm.reduce((a,s)=>a+s.avgWpm,0)/withWpm.length);
+    const peak=Math.max(...sessions.map(s=>s.peakWpm||0));
+    paceEl.textContent='Your natural pace is around '+avg+' wpm'+(peak>avg*1.3?' — you\'ve hit '+peak+'.':'.');
+  } else {
+    paceEl.textContent='';
   }
 }
 
